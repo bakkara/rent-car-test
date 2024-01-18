@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkrent_car_test=self.webpackChunkrent_car_test||[]).push([[265],{265:(e,t,s)=>{s.r(t),s.d(t,{default:()=>r});s(791);var a=s(184);const r=()=>(0,a.jsx)("div",{children:"Catalog"})}}]);
-//# sourceMappingURL=265.18182535.chunk.js.map
