@@ -1,6 +1,6 @@
 import React from 'react'
 
-const HomePage = () => {
+const ModalDetailInf = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default ModalDetailInf

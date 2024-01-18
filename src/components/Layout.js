@@ -1,5 +1,6 @@
 import { Suspense } from 'react'
 import { Link, Outlet } from 'react-router-dom'
+import { Toaster } from 'react-hot-toast';
 
 const Layout = () => {
     return (
@@ -19,7 +20,8 @@ const Layout = () => {
       </header>
       <Suspense fallback={<p>Loader...</p>}>
                 <Outlet />
-        </Suspense>
+            </Suspense>
+    <Toaster position="top-right"/>
     </>
   )
 }
