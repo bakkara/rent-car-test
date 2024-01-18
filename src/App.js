@@ -1,5 +1,4 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import './App.css';
 import Layout from './components/Layout';
 import { lazy } from 'react';
 
@@ -9,7 +8,7 @@ const Favorites = lazy(() => import("./pages/Favorites"))
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />

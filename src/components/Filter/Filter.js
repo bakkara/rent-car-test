@@ -10,7 +10,7 @@ export const Filter = () => {
 
     return (
         <div>
-            <label htmlFor="filter">Find contacts by name
+            <label htmlFor="filter">Car brand
                 <Input
                     name="filter"
                     type="text"

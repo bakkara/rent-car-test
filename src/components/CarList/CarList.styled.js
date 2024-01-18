@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px 29px;
+  margin: 0 auto;
 
 `
 export const ListItem = styled.li`
   display: flex;
+  width: 274px;
+  height: 426px;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
 `;
