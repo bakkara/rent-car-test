@@ -3,16 +3,16 @@ import styled from 'styled-components';
 export const ButtonStyle = styled.button`
   width: ${({ $width }) => `${$width}px`};
   border-radius: 12px;
-    background: #3470FF;    
+    background: ${({ theme }) => theme.colors.primary};    
 
    &:hover {
-    backgroundColor: '#0B44CD',
+    background: ${({ theme }) => theme.colors.hover};
   }
   `;
 
 
 export const TextButton = styled.p`
-  color: #fff;
+  color: ${({ theme }) => theme.colors.white};
   font-family: Manrope;
   font-size: 14px;
   font-style: normal;

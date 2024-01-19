@@ -1,23 +1,18 @@
+import { useState } from "react";
 import Button from "../Button/Button"
 import { CarWrapper, Img, ImgWrap, TextCar, TextCarSpan, TextCarWrapper, TitleCarWrapper, TitleTextCar} from "./CarItem.styled"
-// import { useDispatch } from 'react-redux';
-// import { useState } from "react";
+import ModalDetailInf from "../ModalDetailInf/ModalDetailInf";
 
 export const CarItem = ({car}) => {
-//   const dispatch = useDispatch();
-  
-//   const [isEditing, setIsEditing] = useState(false);
+ 
+const [isOpen, setIsOpen] = useState(false);
 
-//   const handleEditClick = () => {
-//     setIsEditing(true);
-//   };
-
-//   const handleEditModalClose = () => {
-//     setIsEditing(false);
-    //     };
+  const handleModalClose = () => {
+    setIsOpen(false);
+        };
     
     const handleClick = () => {
-        console.log('Hello')
+        setIsOpen(true)
     }
 
     
@@ -42,6 +37,13 @@ export const CarItem = ({car}) => {
                 <TextCar>{car.accessories[0]}</TextCar>
             </TextCarWrapper>
             <Button text={"Learn more"} onClick={handleClick} width={274} />
+            {isOpen && (
+          <ModalDetailInf
+            isOpen = {isOpen}
+            car={car}
+            onRequestClose={handleModalClose}
+        />
+      )}
         </CarWrapper>
     )
 }
