@@ -1,16 +1,16 @@
-
 import { List, ListItem } from "./CarList.styled"
-import {useSelector } from 'react-redux';
-
 import { CarItem } from "../CarItem/CarItem";
-import { selectVisibleCars } from "../../redux/selectors";
 import { Filter } from "../Filter/Filter";
 
+export const CarList = ({ cars }) => {
+    
+    const sortedContacts = [...cars].sort((a, b) => {
+    const makeA = a.make || '';
+    const makeB = b.make || '';
 
-export const CarList = () => {
-  const cars = useSelector(selectVisibleCars);
-    const sortedContacts = cars.sort((a, b) => a.make.localeCompare(b.name));
-  
+    return makeA.localeCompare(makeB);
+  });
+
   return (
 
       <>

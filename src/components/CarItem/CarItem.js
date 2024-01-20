@@ -1,26 +1,44 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "../Button/Button"
 import { CarWrapper, Img, ImgWrap, TextCar, TextCarSpan, TextCarWrapper, TitleCarWrapper, TitleTextCar} from "./CarItem.styled"
 import ModalDetailInf from "../ModalDetailInf/ModalDetailInf";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFavorites } from "../../redux/selectors";
+import { addFavorite, removeFavorite } from "../../redux/favoritesSlice";
+import FavoriteCheckbox from "../FavoriteCheckbox/FavoriteCheckbox";
 
 export const CarItem = ({car}) => {
- 
+ const dispatch = useDispatch();
+const favorites = useSelector(selectFavorites);
+const [isChecked, setIsChecked] = useState(false);
+  
+useEffect(() => {
+    const isCarInFavorites = favorites.items.some((item) => item.id === car.id);
+    setIsChecked(isCarInFavorites);
+  }, [favorites.items, car.id]);
 const [isOpen, setIsOpen] = useState(false);
 
-  const handleModalClose = () => {
-    setIsOpen(false);
-        };
-    
-    const handleClick = () => {
-        setIsOpen(true)
+    const handleCheckboxChange = () => {
+    if (isChecked) {
+      dispatch(removeFavorite({ car }));
+    } else {
+      dispatch(addFavorite({ car }));
     }
+    };
+    
+    const toggleModal = (open) => setIsOpen(open);
+
+    const handleModalClose = () => toggleModal(false);
+
+    const handleClick = () => toggleModal(true);
 
     
     return (
         <CarWrapper>
             <ImgWrap>
-            <Img src={car.img} />
-        </ImgWrap>
+                <FavoriteCheckbox isChecked={isChecked} onChange={handleCheckboxChange}/>
+                <Img src={car.img} />
+            </ImgWrap>
         <TitleCarWrapper>
                 
                 <TitleTextCar>{car.make} <TextCarSpan>{car.model},</TextCarSpan> {car.year} </TitleTextCar>

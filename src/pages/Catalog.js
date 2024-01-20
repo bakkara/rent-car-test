@@ -1,13 +1,17 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectIsLoading } from '../redux/selectors';
+import { selectIsLoading, selectVisibleCars } from '../redux/selectors';
 import { fetchCars } from '../redux/operations';
 import { Loader } from '../components/Loader/Loader';
 import { CarList } from '../components/CarList/CarList';
 
+
+
 const Catalog = () => {
     const dispatch = useDispatch();
-  const isLoading = useSelector(selectIsLoading);
+    const isLoading = useSelector(selectIsLoading);
+    
+    const cars = useSelector(selectVisibleCars);
 
   useEffect(() => {
     dispatch(fetchCars());
@@ -15,7 +19,7 @@ const Catalog = () => {
     return (
       <>
             <div>{isLoading && <Loader />}</div>
-            <CarList/>
+            <CarList cars={cars} />
         </>
   )
 }

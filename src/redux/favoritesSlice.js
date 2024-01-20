@@ -9,14 +9,12 @@ export const favoritesSlice = createSlice({
     },
 
   reducers: {
-    addFavorite: (state, action) => {
-      state.favorites.push(action.payload);
+      addFavorite: (state, action) => {
+      state.items.push(action.payload.car);
     },
     removeFavorite: (state, action) => {
-      const updatedFavorites = state.favorites.filter(
-        item => item.id !== action.payload.id
-      );
-      state.favorites = updatedFavorites;
+      const carToRemove = action.payload.car;
+      state.items = state.items.filter(item => item.id !== carToRemove.id);
     },
   },
 });
