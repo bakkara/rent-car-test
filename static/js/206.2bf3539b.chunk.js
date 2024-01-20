@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkrent_car_test=self.webpackChunkrent_car_test||[]).push([[206],{1206:(e,t,s)=>{s.r(t),s.d(t,{default:()=>a});s(2791);var r=s(184);const a=()=>(0,r.jsx)("div",{children:"HomePage"})}}]);
+//# sourceMappingURL=206.2bf3539b.chunk.js.map
