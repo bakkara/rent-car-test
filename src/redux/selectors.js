@@ -14,9 +14,8 @@ export const selectVisibleCars = createSelector(
     return cars.filter(car =>
       car.make.toLowerCase().includes(filter.text.toLowerCase()) &&
       (filter.selectedMake === '' || car.make === filter.selectedMake) &&
-      (filter.selectedPrice === null || car.rentalPrice <= filter.selectedPrice)
+      (filter.selectedPrice === null || (parseInt(car.rentalPrice.replace('$', ''), 10) <= filter.selectedPrice))
     );
   }
 );
-
 export const selectFavorites = state => state.favorites;
