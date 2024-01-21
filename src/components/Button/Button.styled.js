@@ -31,4 +31,9 @@ export const LoadMoreButton = styled.div`
   display: flex;
   justify-content: center;
   margin-bottom: 150px;
+  cursor: pointer;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.hover};
+  }
 `
