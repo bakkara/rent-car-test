@@ -15,3 +15,10 @@ export const ListItem = styled.li`
   flex-direction: column;
   align-items: flex-start;
 `;
+
+export const Container = styled.div`
+  align-items: center;
+  height: auto;
+  padding: 24px 20px 40px;
+
+`;

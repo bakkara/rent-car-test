@@ -13,7 +13,8 @@ export const selectVisibleCars = createSelector(
   (cars, filter) => {
     return cars.filter(car =>
       car.make.toLowerCase().includes(filter.text.toLowerCase()) &&
-      (filter.selectedMake === '' || car.make === filter.selectedMake)
+      (filter.selectedMake === '' || car.make === filter.selectedMake) &&
+      (filter.selectedPrice === null || car.rentalPrice <= filter.selectedPrice)
     );
   }
 );

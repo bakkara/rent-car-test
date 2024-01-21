@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const FiltersWrapper = styled.div`
    display: flex;
     justify-content: center;
+    gap: 18px;
     `
 export const InputWrapper = styled.div`
     display: block;
@@ -27,11 +28,7 @@ export const SelectStyles = {
               borderRadius: '14px',
               fontSize: '18px',
               fontFamily: 'Manrope',
-        backgroundColor: '#F7F7FB',
-        borderColor: state.isFocused ? 'red' : 'grey',
-    '&:hover': {
-      borderColor: 'pink', // Колір обрамлення при наведенні
-    },
+                backgroundColor: '#F7F7FB',
     }),
     menu: base => ({
         ...base,

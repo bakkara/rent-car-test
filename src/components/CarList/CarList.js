@@ -1,4 +1,4 @@
-import { List, ListItem } from "./CarList.styled"
+import { Container, List, ListItem } from "./CarList.styled"
 import { CarItem } from "../CarItem/CarItem";
 import { Filter } from "../Filter/Filter";
 
@@ -6,7 +6,7 @@ export const CarList = ({ cars }) => {
     
   return (
 
-      <>
+      <Container>
     <Filter />
      <List>
         {cars.map(item => (
@@ -15,7 +15,7 @@ export const CarList = ({ cars }) => {
             </ListItem>
       ))}
           </List>
-      </>
+      </Container>
 
  )
 }
