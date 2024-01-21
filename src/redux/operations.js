@@ -22,3 +22,17 @@ export const fetchCars = createAsyncThunk (
     }
   }
 );
+
+export const fetchAllCars = createAsyncThunk (
+  "cars/fetchAllCars",
+    async (_, thunkAPI) => {
+    try {
+      const { data } = await axios.get("/adverts");
+      return data;
+    } catch (error) {
+        toast.error('Oops. Something is wrong. Please try again!');
+        console.log(error)
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);

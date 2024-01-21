@@ -4,11 +4,17 @@ import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter, selectCars } from "../../redux/selectors";
 import { setFilter, setSelectedMake, setSelectedPrice } from "../../redux/filterSlice";
 import Button from '../Button/Button';
+import { useEffect } from 'react';
+import { fetchAllCars } from '../../redux/operations';
 
 export const Filter = () => {
     const filter = useSelector(selectFilter);
-    const cars = useSelector(selectCars);
+    const cars = useSelector(state => state.cars.adverts);
     const dispatch = useDispatch();
+
+    useEffect (() =>{
+    dispatch(fetchAllCars())
+  }, [dispatch]);
 
     const handleInputChange = inputValue => {
         dispatch(setFilter(inputValue));
@@ -35,7 +41,6 @@ export const Filter = () => {
       <FiltersWrapper>
    
       <Label htmlFor="make">Car brand
-        
           <Select
             name="make"
             value={makeOptions.find(option => option.value === filter.selectedMake)}
@@ -74,8 +79,7 @@ export const Filter = () => {
                   isSearchable
                   placeholder="To $"
                   
-          />
-       
+          /> 
                 </Label>
               
          <Form>
