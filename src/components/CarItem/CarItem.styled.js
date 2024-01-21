@@ -16,7 +16,10 @@ export const TitleTextCar = styled.p`
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
-    margin: 0;`
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;`
     
 export const TextCarSpan = styled.span`
     color: #3470FF;`
