@@ -1,24 +1,24 @@
 {
   "files": {
     "main.css": "/rent-car-test/static/css/main.fc624a65.css",
-    "main.js": "/rent-car-test/static/js/main.1b60028c.js",
-    "static/js/581.832b9e9f.chunk.js": "/rent-car-test/static/js/581.832b9e9f.chunk.js",
+    "main.js": "/rent-car-test/static/js/main.88b030bd.js",
+    "static/js/581.cf024b6b.chunk.js": "/rent-car-test/static/js/581.cf024b6b.chunk.js",
     "static/js/265.3b19f3a7.chunk.js": "/rent-car-test/static/js/265.3b19f3a7.chunk.js",
-    "static/js/681.d2dc23b3.chunk.js": "/rent-car-test/static/js/681.d2dc23b3.chunk.js",
+    "static/js/681.946f361e.chunk.js": "/rent-car-test/static/js/681.946f361e.chunk.js",
     "static/js/649.5fdc752c.chunk.js": "/rent-car-test/static/js/649.5fdc752c.chunk.js",
-    "static/js/92.c6faae44.chunk.js": "/rent-car-test/static/js/92.c6faae44.chunk.js",
+    "static/js/92.9ca9c58d.chunk.js": "/rent-car-test/static/js/92.9ca9c58d.chunk.js",
     "static/media/BgCar.jpg": "/rent-car-test/static/media/BgCar.8923e0c8b1c61f732810.jpg",
     "index.html": "/rent-car-test/index.html",
     "main.fc624a65.css.map": "/rent-car-test/static/css/main.fc624a65.css.map",
-    "main.1b60028c.js.map": "/rent-car-test/static/js/main.1b60028c.js.map",
-    "581.832b9e9f.chunk.js.map": "/rent-car-test/static/js/581.832b9e9f.chunk.js.map",
+    "main.88b030bd.js.map": "/rent-car-test/static/js/main.88b030bd.js.map",
+    "581.cf024b6b.chunk.js.map": "/rent-car-test/static/js/581.cf024b6b.chunk.js.map",
     "265.3b19f3a7.chunk.js.map": "/rent-car-test/static/js/265.3b19f3a7.chunk.js.map",
-    "681.d2dc23b3.chunk.js.map": "/rent-car-test/static/js/681.d2dc23b3.chunk.js.map",
+    "681.946f361e.chunk.js.map": "/rent-car-test/static/js/681.946f361e.chunk.js.map",
     "649.5fdc752c.chunk.js.map": "/rent-car-test/static/js/649.5fdc752c.chunk.js.map",
-    "92.c6faae44.chunk.js.map": "/rent-car-test/static/js/92.c6faae44.chunk.js.map"
+    "92.9ca9c58d.chunk.js.map": "/rent-car-test/static/js/92.9ca9c58d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fc624a65.css",
-    "static/js/main.1b60028c.js"
+    "static/js/main.88b030bd.js"
   ]
 }
