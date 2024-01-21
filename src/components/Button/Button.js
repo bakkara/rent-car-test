@@ -5,9 +5,9 @@ const Button = ({ text, onClick, width }) => {
   return (
       <ButtonStyle
           type="button"
-      onClick={onClick}
-      $width={width}
-    >
+          onClick={onClick}
+          $width={width}
+      >
       <TextButton>{text}</TextButton>
     </ButtonStyle>
   )

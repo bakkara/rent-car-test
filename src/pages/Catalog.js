@@ -4,35 +4,36 @@ import { selectIsLoading, selectVisibleCars } from '../redux/selectors';
 import { fetchCars } from '../redux/operations';
 import { Loader } from '../components/Loader/Loader';
 import { CarList } from '../components/CarList/CarList';
+import { LoadMoreButton } from '../components/Button/Button.styled';
 
 
 
 const Catalog = () => {
-    const dispatch = useDispatch();
-    const isLoading = useSelector(selectIsLoading);
-    
+  
+  const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
   const cars = useSelector(selectVisibleCars);
+  const loadMore = useSelector(state => state.cars.loadMore)
   
   const handleLoadMore = () => {
-    // Отримати поточну сторінку та обмеження зі стану або встановити їх за замовчуванням
     const currentPage = Math.ceil(cars.length / 12) + 1;
     const limit = 12;
-
-    // Відправити запит на завантаження додаткових машин
     dispatch(fetchCars({ page: currentPage, limit }));
   };
 
-  useEffect(() => {
-    dispatch(fetchCars({ page: 1, limit: 12 }))}, [dispatch]);
+  useEffect(() =>{
+    dispatch(fetchCars({ page: 1, limit: 12 }))
+  }, [dispatch]);
   
     return (
       <>
-            <div>{isLoading && <Loader />}</div>
+        <div>{isLoading && <Loader />}</div>
         <CarList cars={cars} />
-        <button type="button" onClick={handleLoadMore}>
-        Load More
-      </button>
-        </>
+        {loadMore && (
+          <LoadMoreButton type="button" onClick={handleLoadMore} >Load More</LoadMoreButton>
+        )}
+        
+      </>
   )
 }
 

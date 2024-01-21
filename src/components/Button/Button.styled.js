@@ -19,3 +19,16 @@ export const TextButton = styled.p`
   font-weight: 600;
   line-height: 1.43;
 `;
+
+export const LoadMoreButton = styled.div`
+  color: #3470FF;
+  font-family: Manrope;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration-line: underline;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 150px;
+`

@@ -20,5 +20,5 @@ export const Container = styled.div`
   align-items: center;
   height: auto;
   padding: 24px 20px 40px;
-
+margin-bottom: 100px;
 `;

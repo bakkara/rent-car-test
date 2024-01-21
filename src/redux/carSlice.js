@@ -15,8 +15,9 @@ const carsSlice = createSlice({
     initialState: {
       items: [],
       totalCars: 0,
-        isLoading: false,
-        error: null
+      isLoading: false,
+      error: null,
+      loadMore: true
     },
     extraReducers: builder => {
         builder
@@ -24,8 +25,9 @@ const carsSlice = createSlice({
             .addCase(fetchCars.fulfilled, (state, action) => {
   state.isLoading = false;
   state.error = null;
-  state.items = [...state.items, ...action.payload]; // Замініть на додавання до існуючого списку
-  state.totalCars = state.items.length; // Оновлення загальної кількості машин
+  state.items = [...state.items, ...action.payload];
+              state.totalCars = state.items.length;
+              state.loadMore = action.payload.length > 0;
 })
             .addCase(fetchCars.rejected, handleRejected)
     }
