@@ -8,17 +8,19 @@ import { addFavorite, removeFavorite } from "../../redux/favoritesSlice";
 import FavoriteCheckbox from "../FavoriteCheckbox/FavoriteCheckbox";
 
 export const CarItem = ({car}) => {
- const dispatch = useDispatch();
-const favorites = useSelector(selectFavorites);
-const [isChecked, setIsChecked] = useState(false);
-  
-useEffect(() => {
-    const isCarInFavorites = favorites.items.some((item) => item.id === car.id);
-    setIsChecked(isCarInFavorites);
-  }, [favorites.items, car.id]);
-const [isOpen, setIsOpen] = useState(false);
 
-    const handleCheckboxChange = () => {
+  const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+  const [isChecked, setIsChecked] = useState(false);
+  
+  useEffect(() => {
+      const isCarInFavorites = favorites.items.some((item) => item.id === car.id);
+      setIsChecked(isCarInFavorites);
+    }, [favorites.items, car.id]);
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleCheckboxChange = () => {
     if (isChecked) {
       dispatch(removeFavorite({ car }));
     } else {

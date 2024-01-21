@@ -2,29 +2,29 @@ import styled from 'styled-components';
 
 export const customStyles = {
         overlay: {
-              position: 'fixed',
-              top: '0',
-              left: '0',
-              width: '100vw',
-              height: '100vh',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'rgba(18, 20, 23, 0.50)',
+                position: 'fixed',
+                top: '0',
+                left: '0',
+                width: '100vw',
+                height: '100vh',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: 'rgba(18, 20, 23, 0.50)',
                 zIndex: '1200', 
-              paddingTop: '20px',
+                paddingTop: '20px',
                 paddingBottom: '20px',
-},
+        },
         content: {
-            padding: '0', 
-            paddingBottom: '40px',
-            border: 'none', 
-            width: '540px',
-            height: 'auto',
-            overflow: 'hidden auto',
-            scrollBehavior: 'smooth',
-            margin: '0 auto',
-            scrollbarWidth: 'thin',
+                padding: '0', 
+                paddingBottom: '40px',
+                border: 'none', 
+                width: '540px',
+                height: 'auto',
+                overflow: 'hidden auto',
+                scrollBehavior: 'smooth',
+                margin: '0 auto',
+                scrollbarWidth: 'thin',
         },
 };
 
@@ -37,7 +37,7 @@ export const ModalContainer = styled.div`
     width: 100%;
     height: 100%;
     
-     padding-bottom: 40px;
+    padding-bottom: 40px;
     `
 
 export const ExitButton = styled.button`

@@ -17,7 +17,7 @@ export const ListItem = styled.li`
 `;
 
 export const Container = styled.div`
-display: flex;
+    display: flex;
     margin: 0 auto;
     padding: 15px 15px;
     flex-direction: column;

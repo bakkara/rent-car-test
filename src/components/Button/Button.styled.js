@@ -13,18 +13,14 @@ export const ButtonStyle = styled.button`
 
 export const TextButton = styled.p`
   color: ${({ theme }) => theme.colors.white};
-  font-family: Manrope;
   font-size: 14px;
-  font-style: normal;
   font-weight: 600;
   line-height: 1.43;
 `;
 
 export const LoadMoreButton = styled.div`
-  color: #3470FF;
-  font-family: Manrope;
+  color: ${({ theme }) => theme.colors.primary};
   font-size: 16px;
-  font-style: normal;
   font-weight: 500;
   line-height: 1.5;
   text-decoration-line: underline;

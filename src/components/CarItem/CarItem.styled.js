@@ -12,7 +12,7 @@ export const TitleCarWrapper = styled.div`
     margin-bottom: 8px;`
 
 export const TitleTextCar = styled.p`
-    color: #121417;
+    color: ${({ theme }) => theme.colors.dark};
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -22,7 +22,7 @@ export const TitleTextCar = styled.p`
     text-overflow: ellipsis;`
     
 export const TextCarSpan = styled.span`
-    color: #3470FF;`
+    color: ${({ theme }) => theme.colors.primary};`
 
 export const TextCarWrapper = styled.div`
     display: flex;
@@ -35,7 +35,6 @@ export const TextCarWrapper = styled.div`
 
 export const TextCar = styled.p`
     color: rgba(18, 20, 23, 0.50);
-    font-family: Manrope;
     font-size: 12px;
     font-weight: 400;
     line-height: 1.5;

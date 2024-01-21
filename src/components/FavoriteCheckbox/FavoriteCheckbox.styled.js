@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const WrapperCheck = styled.div`
-    position: absolute;
-    top: 14px;
-    right: 14px;`
+  position: absolute;
+  top: 14px;
+  right: 14px;`
 
 export const LabelCheck = styled.label`
   position: relative;

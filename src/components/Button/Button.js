@@ -1,4 +1,3 @@
-import React from 'react'
 import { TextButton, ButtonStyle } from './Button.styled'
 
 const Button = ({ text, onClick, width }) => {

@@ -40,68 +40,55 @@ export const Filter = () => {
     return (
       <FiltersWrapper>
    
-      <Label htmlFor="make">Car brand
+        <Label htmlFor="make">Car brand
           <Select
             name="make"
             value={makeOptions.find(option => option.value === filter.selectedMake)}
             onChange={handleSelectChange}
             onInputChange={handleInputChange}
-            options={makeOptions}
-                           
+            options={makeOptions} 
             styles={SelectStyles}
-            components={{
-            IndicatorSeparator: () => null,
-          }}
-                  
+            components={{IndicatorSeparator: () => null}}
             isClearable
-                  isSearchable
-                  placeholder="Enter the text"
-                  
+            isSearchable
+            placeholder="Enter the text"
           />
-       
-      </Label>
-           
-           
-      <Label htmlFor="price">Price/ 1 hour
-        
+        </Label>
+         
+        <Label htmlFor="price">Price/ 1 hour
           <Select
             name="price"
             value={pricesOptions.find(option => option.value === filter.selectedPrice)}
             onChange={handleSelectPrice}
-            options={pricesOptions}
-                           
+            options={pricesOptions}      
             styles={SelectStyles}
-            components={{
-            IndicatorSeparator: () => null,
-          }}
-                  
+            components={{IndicatorSeparator: () => null}}
             isClearable
-                  isSearchable
-                  placeholder="To $"
-                  
-          /> 
-                </Label>
+            isSearchable
+            placeholder="To $"
+            />
+        </Label>
               
-         <Form>
-        <Label>Car mileage / km</Label>
-        <InputWrapper>
-          <InputLeft
-            type="text"
-            value={''}
-                        onChange={() => { console.log('from') }}
-          />
-          <SpanLeft>From</SpanLeft>
-          <InputRight
-            type="text"
-            value={''}
-            onChange={() => { console.log('to') }}
-          />
-                    <SpanRight>To</SpanRight>
-                    <Button text={"Search"} onClick={() => console.log('search')} width={136} />  
-                </InputWrapper>
-                  
-      </Form>
+        <Form>
+            <Label>Car mileage / km</Label>
+            <InputWrapper>
+                <InputLeft
+                    type="text"
+                    value={''}
+                    onChange={() => { console.log('from') }}
+                />
+                <SpanLeft>From</SpanLeft>
+                <InputRight
+                    type="text"
+                    value={''}
+                    onChange={() => { console.log('to') }}
+                />
+                <SpanRight>To</SpanRight>
+                <Button text={"Search"} onClick={() => console.log('search')} width={136} />  
+            </InputWrapper>
+                    
+        </Form>
               
-        </FiltersWrapper>
+    </FiltersWrapper>
   );
 };

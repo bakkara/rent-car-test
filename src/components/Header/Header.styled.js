@@ -22,7 +22,6 @@ export const NavLinkStyled = styled(NavLink)`
     color:${({ theme }) => theme.colors.primary};
     padding: 6px 12px;
     border-radius: 4px;
-
     transform: scale(1);
     pointer-events: none;
   }
