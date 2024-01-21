@@ -53,7 +53,7 @@ const handleClick = () => {
                     <ConditionsContainer>{age.split(':')[0]} : <ConditionsSpan> {age.split(':')[1]}</ConditionsSpan> </ConditionsContainer>
                     <ConditionsContainer>{car.rentalConditions.split('\n')[1]}</ConditionsContainer>
                     <ConditionsContainer>{car.rentalConditions.split('\n')[2]}</ConditionsContainer>
-                    <ConditionsContainer>Mileage: <ConditionsSpan>{car.mileage}</ConditionsSpan></ConditionsContainer>
+                    <ConditionsContainer>Mileage: <ConditionsSpan>{car.mileage.toLocaleString('en-US')}</ConditionsSpan></ConditionsContainer>
                     <ConditionsContainer>Price: <ConditionsSpan>{car.rentalPrice}</ConditionsSpan></ConditionsContainer>
           </WrapperConditions>
           <Button text={"Rental car"} onClick={handleClick} width={168} />

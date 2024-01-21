@@ -25,6 +25,9 @@ export const TextCarWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 28px;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     `
 
 export const TextCar = styled.p`
@@ -35,6 +38,8 @@ export const TextCar = styled.p`
     line-height: 1.5;
     margin: 0;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     
     &::after {
         content: '';
@@ -47,7 +52,8 @@ export const TextCar = styled.p`
 
     &:last-child::after {
         content: none;
-    }`
+    }
+`;
 
 
 export const ImgWrap = styled.div`

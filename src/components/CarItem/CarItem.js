@@ -51,7 +51,7 @@ const [isOpen, setIsOpen] = useState(false);
                 <TextCar>{car.rentalCompany}</TextCar>
                 <TextCar>{car.type}</TextCar>
                 <TextCar>{car.model}</TextCar>
-                <TextCar>{car.mileage}</TextCar>
+                <TextCar>{car.mileage.toLocaleString('en-US')}</TextCar>
                 <TextCar>{car.accessories[0]}</TextCar>
             </TextCarWrapper>
             <Button text={"Learn more"} onClick={handleClick} width={274} />
