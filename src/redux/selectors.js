@@ -11,8 +11,9 @@ export const selectError = state => state.cars.error;
 export const selectVisibleCars = createSelector(
   [selectCars, selectFilter],
   (cars, filter) => {
-      return cars.filter(car =>
-      car.make.toLowerCase().includes(filter.toLowerCase())
+    return cars.filter(car =>
+      car.make.toLowerCase().includes(filter.text.toLowerCase()) &&
+      (filter.selectedMake === '' || car.make === filter.selectedMake)
     );
   }
 );

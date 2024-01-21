@@ -1,24 +1,13 @@
 import { Suspense } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast';
 import { Loader } from './Loader/Loader';
+import Header from './Header/Header';
 
 const Layout = () => {
     return (
       <>
-    <header>
-          <nav>
-              <Link to='/'>
-                  Home
-              </Link>
-              <Link to='/catalog'>
-                  Catalog
-              </Link>
-              <Link to='/favorites'>
-                  Favorites
-              </Link>
-          </nav>          
-      </header>
+    <Header/>
       <Suspense fallback={<Loader/> }>
                 <Outlet />
             </Suspense>

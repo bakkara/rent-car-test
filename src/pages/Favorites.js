@@ -8,7 +8,6 @@ const favorites = useSelector(selectFavorites);
 
   return (
     <>
-      <h1>Favorites</h1>
       <CarList cars={favorites.items} />
     </>
   );
