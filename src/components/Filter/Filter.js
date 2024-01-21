@@ -1,7 +1,7 @@
 import Select from 'react-select';
 import { FiltersWrapper, Form, InputLeft, InputRight, InputWrapper, Label, SelectStyles, SpanLeft, SpanRight } from "./Filter.styled";
 import { useSelector, useDispatch } from 'react-redux';
-import { selectFilter, selectCars } from "../../redux/selectors";
+import { selectFilter } from "../../redux/selectors";
 import { setFilter, setSelectedMake, setSelectedPrice } from "../../redux/filterSlice";
 import Button from '../Button/Button';
 import { useEffect } from 'react';
