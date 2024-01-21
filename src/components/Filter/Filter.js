@@ -7,6 +7,8 @@ import Button from '../Button/Button';
 import { useEffect } from 'react';
 import { fetchAllCars } from '../../redux/operations';
 
+//На жаль, трішки не вистачило часу, щоб доробити фільтри, працює лише фільтр по маркам
+
 export const Filter = () => {
     const filter = useSelector(selectFilter);
     const cars = useSelector(state => state.cars.adverts);
