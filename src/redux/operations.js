@@ -6,10 +6,14 @@ axios.defaults.baseURL = "https://651bdb34194f77f2a5aef818.mockapi.io"
 
 export const fetchCars = createAsyncThunk (
   "cars/fetchAll",
-  async (_, thunkAPI) => {
+    async ({ page = 1, limit = 12 }, thunkAPI) => {
     try {
-        const { data } = await axios.get("/adverts");
-        console.log(data)
+      const { data } = await axios.get("/adverts", {
+        params: {
+          page,
+          limit,
+        },
+      });
       return data;
     } catch (error) {
         toast.error('Oops. Something is wrong. Please try again!');

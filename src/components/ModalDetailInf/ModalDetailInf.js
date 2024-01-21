@@ -55,10 +55,8 @@ const handleClick = () => {
                     <ConditionsContainer>{car.rentalConditions.split('\n')[2]}</ConditionsContainer>
                     <ConditionsContainer>Mileage: <ConditionsSpan>{car.mileage}</ConditionsSpan></ConditionsContainer>
                     <ConditionsContainer>Price: <ConditionsSpan>{car.rentalPrice}</ConditionsSpan></ConditionsContainer>
-              </WrapperConditions>
-        <Button text={"Rental car"} onClick={handleClick} width={168}/>
-          
-          
+          </WrapperConditions>
+          <Button text={"Rental car"} onClick={handleClick} width={168} />
           </ModalContainer>
     </Modal>
   )

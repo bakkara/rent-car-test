@@ -17,6 +17,7 @@ export const customStyles = {
 },
         content: {
             padding: '0', 
+            paddingBottom: '40px',
             border: 'none', 
             width: '540px',
             height: 'auto',
@@ -34,7 +35,10 @@ export const ModalContainer = styled.div`
     color: ${({ theme }) => theme.colors.black};
     position: relative;
     width: 100%;
-    height: 100vh;`
+    height: 100%;
+    
+     padding-bottom: 40px;
+    `
 
 export const ExitButton = styled.button`
     position: absolute;

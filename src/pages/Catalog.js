@@ -14,8 +14,8 @@ const Catalog = () => {
     const cars = useSelector(selectVisibleCars);
 
   useEffect(() => {
-    dispatch(fetchCars());
-  }, [dispatch]);
+    dispatch(fetchCars({ page: 1, limit: 12 }))}, [dispatch]);
+  
     return (
       <>
             <div>{isLoading && <Loader />}</div>

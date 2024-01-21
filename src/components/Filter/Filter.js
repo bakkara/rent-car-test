@@ -1,8 +1,9 @@
 import Select from 'react-select';
-import { FiltersWrapper, InputWrapper, Label, SelectStyles } from "./Filter.styled";
+import { FiltersWrapper, Label, SelectStyles } from "./Filter.styled";
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter, selectCars } from "../../redux/selectors";
 import { setFilter, setSelectedMake, setSelectedPrice } from "../../redux/filterSlice";
+import Button from '../Button/Button';
 
 export const Filter = () => {
   const filter = useSelector(selectFilter);
@@ -32,7 +33,7 @@ export const Filter = () => {
 
     return (
       <FiltersWrapper>
-    <InputWrapper>
+   
       <Label htmlFor="make">Car brand
         
           <Select
@@ -54,8 +55,8 @@ export const Filter = () => {
           />
        
       </Label>
-            </InputWrapper>
-            <InputWrapper>
+           
+           
       <Label htmlFor="price">Price/ 1 hour
         
           <Select
@@ -75,8 +76,10 @@ export const Filter = () => {
                   
           />
        
-      </Label>
-            </InputWrapper>
+                </Label>
+              
+         
+            <Button text={"Search"} onClick={() => console.log('search')} width={136} />      
         </FiltersWrapper>
   );
 };

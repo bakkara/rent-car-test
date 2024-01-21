@@ -4,11 +4,11 @@ export const FiltersWrapper = styled.div`
    display: flex;
     justify-content: center;
     gap: 18px;
-    `
-export const InputWrapper = styled.div`
-    display: block;
     margin-bottom: 8px;
+    align-items: flex-end;
     `
+
+
 export const Label = styled.label`
 color: #8A8A89;
 
@@ -16,8 +16,7 @@ font-family: Manrope;
 font-size: 14px;
 font-style: normal;
 font-weight: 500;
-line-height: 18px;
-margin-bottom: 8px;`
+line-height: 18px;`
 
 export const SelectStyles = {
             control: (base, state) => ({
