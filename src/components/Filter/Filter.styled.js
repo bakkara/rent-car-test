@@ -55,5 +55,77 @@ export const SelectStyles = {
           }
 
 
+export const InputWrapper = styled.div`
+  display: flex;
+  position: relative;
+  height: 48px;
+`;
 
+export const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`;
+
+
+export const InputLeft = styled.input`
+  display: block;
+  width: 160px;
+  height: 48px;
+  border: none;
+  border-right: 1px solid rgba(138, 138, 137, 0.20);
+  background-color: #F7F7FB;
+  border-radius: 14px 0 0 14px;
+  padding-left: 0;
+  text-indent: 70px;
+  font-family: 'Manrope';
+  color: #121417;
+  font-size: 18px;
+
+  &:focus {
+    outline-color: #3470FF;
+  }
+`;
+
+export const InputRight = styled.input`
+  display: block;
+  width: 160px;
+  height: 48px;
+  border: none;
+  background-color: #F7F7FB;
+  border-radius: 0 14px 14px 0;
+  padding-left: 0;
+  text-indent: 45px;
+  font-family: 'Manrope';
+  color: #121417;
+  font-size: 18px;
+  margin-right: 18px;
+
+  &:focus {
+    outline-color: #3470FF;
+  }
+`;
+
+export const SpanLeft = styled.span`
+    position: absolute;
+    display: block;
+    left: 24px;
+    top: 15px;
+    color: #121417;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.1;
+`;
+
+export const SpanRight = styled.span`
+    position: absolute;
+    display: block;
+    left: 184px;
+    top: 15px;
+    color: #121417;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.1;
+`;
 

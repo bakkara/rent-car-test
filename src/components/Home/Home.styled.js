@@ -14,12 +14,12 @@ export const HomeText = styled.p`
     margin-top: 40px;
     margin-left: auto;
     margin-right: auto;
-    width: 230px;
+    width: 100%;
 `;
 
 export const HomeButton = styled(Link)`
     border-radius: 12px;
-    width: 130px;
+    width: 230px;
     display: flex;
     justify-content: center;
     margin: 0 auto;

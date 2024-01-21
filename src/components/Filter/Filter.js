@@ -1,27 +1,27 @@
 import Select from 'react-select';
-import { FiltersWrapper, Label, SelectStyles } from "./Filter.styled";
+import { FiltersWrapper, Form, InputLeft, InputRight, InputWrapper, Label, SelectStyles, SpanLeft, SpanRight } from "./Filter.styled";
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter, selectCars } from "../../redux/selectors";
 import { setFilter, setSelectedMake, setSelectedPrice } from "../../redux/filterSlice";
 import Button from '../Button/Button';
 
 export const Filter = () => {
-  const filter = useSelector(selectFilter);
+    const filter = useSelector(selectFilter);
     const cars = useSelector(selectCars);
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
-  const handleInputChange = inputValue => {
-    dispatch(setFilter(inputValue));
-  };
+    const handleInputChange = inputValue => {
+        dispatch(setFilter(inputValue));
+    };
 
-  const handleSelectChange = selectedOption => {
-    dispatch(setFilter(selectedOption ? selectedOption.value : ''));
-    dispatch(setSelectedMake(selectedOption ? selectedOption.value : ''));
-  };
+    const handleSelectChange = selectedOption => {
+        dispatch(setFilter(selectedOption ? selectedOption.value : ''));
+        dispatch(setSelectedMake(selectedOption ? selectedOption.value : ''));
+    };
 
-  const handleSelectPrice = selectedOption => {
-  dispatch(setSelectedPrice(selectedOption ? parseInt(selectedOption.value, 10) : null));
-};
+    const handleSelectPrice = selectedOption => {
+    dispatch(setSelectedPrice(selectedOption ? parseInt(selectedOption.value, 10) : null));
+    };
     
     const makeOptions = [...new Set(cars.map(car => car.make))].map(make => ({ value: make, label: make }));
     
@@ -78,8 +78,26 @@ export const Filter = () => {
        
                 </Label>
               
-         
-            <Button text={"Search"} onClick={() => console.log('search')} width={136} />      
+         <Form>
+        <Label>Car mileage / km</Label>
+        <InputWrapper>
+          <InputLeft
+            type="text"
+            value={''}
+                        onChange={() => { console.log('from') }}
+          />
+          <SpanLeft>From</SpanLeft>
+          <InputRight
+            type="text"
+            value={''}
+            onChange={() => { console.log('to') }}
+          />
+                    <SpanRight>To</SpanRight>
+                    <Button text={"Search"} onClick={() => console.log('search')} width={136} />  
+                </InputWrapper>
+                  
+      </Form>
+              
         </FiltersWrapper>
   );
 };
