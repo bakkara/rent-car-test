@@ -3,7 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const filterInitialState = {
   text: '',
     selectedMake: '',
-  selectedPrice: null,
+    selectedPrice: null,
+  mileage: {
+    from: null,
+    to: null,
+  },
 };
 
 const filterSlice = createSlice({
@@ -17,6 +21,9 @@ const filterSlice = createSlice({
           text: action.payload,
         };
       },
+      },
+    setMileage: (state, action) => {
+      state.mileage = action.payload;
     },
     setSelectedMake: {
       reducer(state, action) {
@@ -28,9 +35,10 @@ const filterSlice = createSlice({
       },
     setSelectedPrice: (state, action) => {
       state.selectedPrice = action.payload;
+      },
     },
-  },
+  
 });
 
-export const { setFilter, setSelectedMake, setSelectedPrice } = filterSlice.actions;
+export const { setFilter, setSelectedMake, setSelectedPrice, setMileage } = filterSlice.actions;
 export const filterReducer = filterSlice.reducer;

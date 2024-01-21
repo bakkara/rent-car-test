@@ -87,7 +87,7 @@ export const InputRight = styled.input`
   background-color: #F7F7FB;
   border-radius: 0 14px 14px 0;
   padding-left: 0;
-  text-indent: 45px;
+  text-indent: 50px;
   color: ${({ theme }) => theme.colors.dark};
   font-size: 18px;
   margin-right: 18px;

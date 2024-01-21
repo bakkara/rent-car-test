@@ -14,8 +14,11 @@ export const selectVisibleCars = createSelector(
     return cars.filter(car =>
       car.make.toLowerCase().includes(filter.text.toLowerCase()) &&
       (filter.selectedMake === '' || car.make === filter.selectedMake) &&
-      (filter.selectedPrice === null || (parseInt(car.rentalPrice.replace('$', ''), 10) <= filter.selectedPrice))
+      (filter.selectedPrice === null || (parseInt(car.rentalPrice.replace('$', ''), 10) <= filter.selectedPrice)) &&
+      (filter.mileage.from === null || (parseInt(car.mileage, 10) >= filter.mileage.from)) &&
+      (filter.mileage.to === null || (parseInt(car.mileage, 10) <= filter.mileage.to))
     );
   }
 );
+
 export const selectFavorites = state => state.favorites;

@@ -2,12 +2,14 @@ import Select from 'react-select';
 import { FiltersWrapper, Form, InputLeft, InputRight, InputWrapper, Label, SelectStyles, SpanLeft, SpanRight } from "./Filter.styled";
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter } from "../../redux/selectors";
-import { setFilter, setSelectedMake, setSelectedPrice } from "../../redux/filterSlice";
+import { setFilter, setMileage, setSelectedMake, setSelectedPrice } from "../../redux/filterSlice";
 import Button from '../Button/Button';
 import { useEffect } from 'react';
 import { fetchAllCars } from '../../redux/operations';
 
-//На жаль, трішки не вистачило часу, щоб доробити фільтри, працює лише фільтр по маркам та цінам
+//На жаль, трішки не вистачило часу, щоб доробити фільтри. Фільтр по маркам працює не зовсім правильно, він шукає лише
+// по видимим машинам, не враховуючи пагінацію. По цінам працює. ПО кілометражу було не зрозуміло як має ввести користувач, припустимо 6000 км, чи просто 6. Реалізовано в форматі 6000
+// Кнопка search не працює. Не зовсім зрощуміло як вона має працювати. Як на мене логічніше, щоб обрали фільтр і він одразу спрацював, без потреби натискати на кнопку
 
 export const Filter = () => {
     const filter = useSelector(selectFilter);
@@ -30,6 +32,11 @@ export const Filter = () => {
     const handleSelectPrice = selectedOption => {
     dispatch(setSelectedPrice(selectedOption ? parseInt(selectedOption.value, 10) : null));
     };
+
+    const handleMileageChange = (from, to) => {
+    dispatch(setMileage({ from, to }));
+  };
+
     
     const makeOptions = [...new Set(cars.map(car => car.make))].map(make => ({ value: make, label: make }));
     
@@ -72,24 +79,23 @@ export const Filter = () => {
         </Label>
               
         <Form>
-            <Label>Car mileage / km</Label>
-            <InputWrapper>
-                <InputLeft
-                    type="text"
-                    value={''}
-                    onChange={() => { console.log('from') }}
-                />
-                <SpanLeft>From</SpanLeft>
-                <InputRight
-                    type="text"
-                    value={''}
-                    onChange={() => { console.log('to') }}
-                />
-                <SpanRight>To</SpanRight>
-                <Button text={"Search"} onClick={() => console.log('search')} width={136} />  
-            </InputWrapper>
-                    
-        </Form>
+        <Label>Car mileage / km</Label>
+        <InputWrapper>
+          <InputLeft
+            type="text"
+            value={filter.mileage.from || ''}
+            onChange={(e) => handleMileageChange(e.target.value, filter.mileage.to)}
+          />
+          <SpanLeft>From</SpanLeft>
+          <InputRight
+            type="text"
+            value={filter.mileage.to || ''}
+            onChange={(e) => handleMileageChange(filter.mileage.from, e.target.value)}
+          />
+          <SpanRight>To</SpanRight>
+          <Button text={"Search"} onClick={() => console.log('search')} width={136} />
+        </InputWrapper>
+      </Form>
               
     </FiltersWrapper>
   );
