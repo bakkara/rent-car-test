@@ -11,23 +11,35 @@ const handleRejected = (state, action) => {
 };
 
 const carsSlice = createSlice({
-    name: 'cars',
-    initialState: {
-        items: [],
-        isLoading: false,
-        error: null
+  name: 'cars',
+  initialState: {
+    items: [],
+    isLoading: false,
+    error: null,
+    currentPage: 1,
+    loadMore: true,
+  },
+  reducers: {
+    setPage: (state, action) => {
+      state.currentPage = action.payload;
     },
-    extraReducers: builder => {
-        builder
-            .addCase(fetchCars.pending, handlePending)
-            .addCase(fetchCars.fulfilled, (state, action) => {
-                state.isLoading = false;
-                state.error = null;
-                state.items = action.payload;
-            })
-            .addCase(fetchCars.rejected, handleRejected)
-    }
-})
+    setLoadMore: (state, action) => {
+      state.loadMore = action.payload;
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchCars.pending, handlePending)
+      .addCase(fetchCars.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.items = [...state.items, ...action.payload];
+        state.hasMore = action.payload.length > 0;
+      })
+      .addCase(fetchCars.rejected, handleRejected);
+  },
+});
 
+export const { setPage, setLoadMore } = carsSlice.actions;
 
-export const carsReducer = carsSlice.reducer
+export const carsReducer = carsSlice.reducer;
