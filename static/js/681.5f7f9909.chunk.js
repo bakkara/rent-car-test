@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkrent_car_test=self.webpackChunkrent_car_test||[]).push([[681],{9681:(e,t,s)=>{s.r(t),s.d(t,{default:()=>u});s(2791);var r=s(4420),c=s(6351),n=s(8092),a=s(184);const u=()=>{const e=(0,r.v9)(c.Tc);return(0,a.jsx)(a.Fragment,{children:(0,a.jsx)(n.h,{cars:e.items})})}}}]);
+//# sourceMappingURL=681.5f7f9909.chunk.js.map
