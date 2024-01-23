@@ -5,9 +5,6 @@ import { ConditionsContainer, ConditionsSpan, ExitButton, Img, ModalContainer, M
 import { TextCar, TextCarWrapper } from '../CarItem/CarItem.styled';
 import Button from '../Button/Button';
 
-// Я обирала як краще зробити модалку: зробити createPortal чи використати бібліотеку react-modal. 
-// Використала бібліотеку, так як в даному випадку в нас лише одна модалка, тому швидше і раціональніше було використати react - modal.
-// Цікавить думка досвідченого розробника.
 
 const ModalDetailInf = ({ isOpen, car, onRequestClose }) => {
         

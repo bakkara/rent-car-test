@@ -4,7 +4,7 @@ export const FiltersWrapper = styled.div`
    display: flex;
     justify-content: center;
     gap: 18px;
-    margin-bottom: 8px;
+    margin-bottom: 50px;
     align-items: flex-end;
     `
 export const Label = styled.label`

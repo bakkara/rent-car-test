@@ -29,7 +29,7 @@ export const customStyles = {
 };
 
 export const ModalContainer = styled.div`
-    padding: ${({ theme }) => theme.spacing(10)};
+    padding: 40px 35px;
     background-color: ${({ theme }) => theme.colors.white};
     border-radius: ${({ theme }) => theme.spacing(6)};
     color: ${({ theme }) => theme.colors.black};
