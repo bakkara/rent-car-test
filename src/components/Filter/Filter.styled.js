@@ -6,6 +6,7 @@ export const FiltersWrapper = styled.div`
     gap: 18px;
     margin-bottom: 50px;
     align-items: flex-end;
+    flex-wrap: wrap;
     `
 export const Label = styled.label`
     color: #8A8A89;
@@ -58,6 +59,7 @@ export const InputWrapper = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 `;
 
 export const InputLeft = styled.input`
